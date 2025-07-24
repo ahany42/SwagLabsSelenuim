@@ -3,7 +3,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class LoginTestCase extends BaseTest {
-    private static final Logger logger = LogManager.getLogger(LoginTestCase.class);
     @Test
     public void login() {
         logger.info("Starting login test case...");

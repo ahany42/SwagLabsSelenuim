@@ -1,9 +1,13 @@
 //import com.example.utils.PropertiesUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesUtil {
+    private static final Logger logger = LoggerFactory.getLogger(new Object() {}.getClass().getEnclosingClass());
     private static Properties properties = new Properties();
 
     static {
@@ -13,9 +17,11 @@ public class PropertiesUtil {
             if (input != null) {
                 properties.load(input);
             } else {
+                logger.error("test-config.properties not found in classpath.");
                 throw new RuntimeException("test-config.properties not found in classpath.");
             }
         } catch (IOException e) {
+            logger.error("IOException",e);
             throw new RuntimeException("Failed to load properties file", e);
         }
     }

@@ -9,7 +9,7 @@ public class LoginPage {
     private WebDriver webDriver;
     private String userName;
     private String password;
-    private static final Logger logger = LoggerFactory.getLogger(LoginPage.class);
+    private static final Logger logger = LoggerFactory.getLogger(new Object() {}.getClass().getEnclosingClass());
 
     public LoginPage(WebDriver webDriver, String userName, String password){
         this.webDriver = webDriver;
