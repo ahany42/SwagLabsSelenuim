@@ -11,8 +11,8 @@ public class LoginPage {
     private String password;
     private static final Logger logger = LoggerFactory.getLogger(LoginPage.class);
 
-    public LoginPage(WebDriver driver, String userName, String password){
-        this.webDriver = driver;
+    public LoginPage(WebDriver webDriver, String userName, String password){
+        this.webDriver = webDriver;
         this.userName = userName;
         this.password = password;
     }
@@ -20,11 +20,10 @@ public class LoginPage {
     public void LoginToTheSystem(boolean isAuthenticated){
         logger.info("Logging in with username: {}", userName);
 
-        webDriver.findElement(By.id("user-name")).sendKeys(userName);
-        webDriver.findElement(By.id("password")).sendKeys(password);
-        webDriver.findElement(By.id("login-button")).click();
-
         try {
+            webDriver.findElement(By.id("user-name")).sendKeys(userName);
+            webDriver.findElement(By.id("password")).sendKeys(password);
+            webDriver.findElement(By.id("login-button")).click();
             WebElement logo = webDriver.findElement(By.className("app_logo"));
             boolean isDisplayed = logo.isDisplayed();
             if (isAuthenticated) {

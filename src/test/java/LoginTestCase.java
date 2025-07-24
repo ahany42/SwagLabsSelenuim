@@ -1,6 +1,4 @@
 import org.testng.annotations.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,6 +18,7 @@ public class LoginTestCase extends BaseTest {
         loginPage.LoginToTheSystem(expected);
 
         logger.info("Completed login test for user '{}'", username);
+        isLoggedIn = true;
     }
 
 }
