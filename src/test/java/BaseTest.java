@@ -29,6 +29,8 @@ public class BaseTest {
         logger.debug("Navigated to: {}", baseUrl);
         if(!isLoggedIn){
             logger.info("Login...");
+            LoginTestCase loginTestCase = new LoginTestCase();
+            loginTestCase.ValidLogin();
         }
     }
     @AfterClass

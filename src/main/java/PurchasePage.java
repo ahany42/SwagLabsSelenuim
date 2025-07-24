@@ -15,7 +15,7 @@ public class PurchasePage {
     public PurchasePage(WebDriver webDriver) {
         logger.info("Construct");
         this.webDriver = webDriver;
-         buttons = webDriver.findElements(By.className("inventory_btn"));
+         buttons = webDriver.findElements(By.className("btn_inventory"));
         productCounter = buttons.size();
     }
     public void PurchaseItem(){
