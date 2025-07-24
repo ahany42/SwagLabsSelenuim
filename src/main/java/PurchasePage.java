@@ -1,29 +1,70 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.asserts.SoftAssert;
+import java.time.Duration;
 import java.util.List;
-import java.util.Random;
 
 public class PurchasePage {
     private WebDriver webDriver;
-    private static final Logger logger = LoggerFactory.getLogger(new Object() {}.getClass().getEnclosingClass());
-    public int productCounter;
-    public int item_number_to_be_tested;
-    List<WebElement> buttons;
+    private static final Logger logger = LoggerFactory.getLogger(PurchasePage.class);
+    private List<WebElement> buttons;
+    int productCounter;
+    private int item_number_to_be_tested = 0;
+
+    private int initialCartCount = 0;
+    private int cartCount = 0;
+
+    private SoftAssert softAssert = new SoftAssert();
+
     public PurchasePage(WebDriver webDriver) {
-        logger.info("Construct");
         this.webDriver = webDriver;
-         buttons = webDriver.findElements(By.className("btn_inventory"));
-        productCounter = buttons.size();
+        this.buttons = webDriver.findElements(By.className("btn_inventory"));
+        this.productCounter = buttons.size();
     }
-    public void PurchaseItem(){
-        logger.info("Called");
-        Random random = new Random();
-        item_number_to_be_tested = 1 + random.nextInt(5);
-        logger.info("About to Add Item {} to Cart",item_number_to_be_tested);
-        buttons.get(item_number_to_be_tested).click();
-        logger.info("Item Purchased Successfully");
+
+    public void AddToCart() {
+        logger.info("About to add item {} to cart", item_number_to_be_tested);
+        try {
+            WebElement cartNumberLabel = webDriver.findElement(By.className("fa-layers-counter.shopping_cart_badge"));
+            String cartText = cartNumberLabel.getText().trim();
+            initialCartCount = Integer.parseInt(cartText);
+        } catch (Exception e) {
+            logger.info("No items in cart initially. Assuming initialCartCount = 0");
+            initialCartCount = 0;
+        }
+        try {
+            buttons.get(item_number_to_be_tested).click();
+            logger.info("Item added to cart successfully");
+        } catch (Exception e) {
+            logger.error("Failed to click on item {}", item_number_to_be_tested, e);
+            softAssert.fail("Exception while clicking add to cart button: " + e.getMessage());
+        }
+        try {
+            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+            WebElement updatedCartLabel = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.className("fa-layers-counter.shopping_cart_badge")));
+
+            String updatedCartText = updatedCartLabel.getText().trim();
+            cartCount = Integer.parseInt(updatedCartText);
+        } catch (Exception e) {
+            logger.warn("Could not locate updated cart number. Assuming cartCount = 0");
+            cartCount = 0;
+        }
+        softAssert.assertAll();
+    }
+
+    public void NumberOfItemsInCart() {
+        logger.info("Initial cart count: {}", initialCartCount);
+        logger.info("Cart count after adding: {}", cartCount);
+        logger.info("Expected cart count: {}", initialCartCount + 1);
+
+        softAssert.assertEquals(cartCount, initialCartCount + 1, "Cart count mismatch after adding item");
+        softAssert.assertAll(); // Final assertion check
+        logger.info("Cart count validation completed");
     }
 }
