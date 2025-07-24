@@ -1,7 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;  // Soft assert import
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +19,7 @@ public class LoginPage {
 
     public void LoginToTheSystem(boolean isAuthenticated){
         logger.info("Logging in with username: {}", userName);
+        SoftAssert softAssert = new SoftAssert();
 
         try {
             webDriver.findElement(By.id("user-name")).sendKeys(userName);
@@ -27,16 +28,20 @@ public class LoginPage {
             WebElement logo = webDriver.findElement(By.className("app_logo"));
             boolean isDisplayed = logo.isDisplayed();
             if (isAuthenticated) {
-                Assert.assertTrue(isDisplayed, "Login was expected to succeed, but logo is not displayed.");
+                softAssert.assertTrue(isDisplayed, "Login was expected to succeed, but logo is not displayed.");
             } else {
-                Assert.assertFalse(isDisplayed, "Login was expected to fail, but logo is displayed.");
+                softAssert.assertFalse(isDisplayed, "Login was expected to fail, but logo is displayed.");
             }
         } catch (Exception e) {
             if (isAuthenticated) {
-                Assert.fail("Login was expected to succeed, but failed: " + e.getMessage());
+                softAssert.fail("Login was expected to succeed, but failed: " + e.getMessage());
             } else {
-                Assert.assertTrue(true, "Login failed as expected.");
+                // Expected failure, no assertion needed or just log info
+                logger.info("Login failed as expected.");
             }
         }
+
+        // Collect all assertion results
+        softAssert.assertAll();
     }
 }

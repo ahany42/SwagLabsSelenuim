@@ -3,8 +3,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import java.util.List;
 
 public class ProductsTestCase extends BaseTest {
@@ -20,9 +19,9 @@ public class ProductsTestCase extends BaseTest {
 
     @Test
     public void PurchaseButtonsCount() {
-        logger.info("Fetching products ");
         List<WebElement> buttons = webDriver.findElements(By.className("btn_inventory"));
         buttonCounter = buttons.size();
+        logger.info("Fetching products ");
         int expectedCount = purchasePage.productCounter;
         if (buttonCounter == expectedCount) {
             logger.info("✅ Product count matches expected value.");
@@ -35,7 +34,6 @@ public class ProductsTestCase extends BaseTest {
 
     @Test
     public void PriceLabelCount() {
-
         logger.info("Fetching products ");
         List<WebElement> priceLabels = webDriver.findElements(By.className("inventory_item_price"));
         PriceLabelCounter = priceLabels.size();
@@ -47,10 +45,5 @@ public class ProductsTestCase extends BaseTest {
         }
         softAssert.assertEquals(PriceLabelCounter, expectedCount, "Product count mismatch!");
         softAssert.assertAll();
-    }
-
-    @Test
-    public void AddToCartToggler(){
-
     }
 }

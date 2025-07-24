@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.io.FileWriter;
+import org.testng.TestNG;
 import java.io.IOException;
 public class BaseTest {
     public static final Logger logger = LogManager.getLogger(LoginTestCase.class);
@@ -28,8 +29,6 @@ public class BaseTest {
         logger.debug("Navigated to: {}", baseUrl);
         if(!isLoggedIn){
             logger.info("Login...");
-            LoginTestCase loginTestCase = new LoginTestCase();
-            loginTestCase.login();
         }
     }
     @AfterClass
