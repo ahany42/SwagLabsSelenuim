@@ -22,4 +22,20 @@ public class PurchaseTestCase extends BaseTest {
         PurchasePage purchasePage = new PurchasePage(webDriver);
         purchasePage.CheckOut();
     }
+    @Test (priority = 5)
+    public void FillCheckOutForm(){
+        PurchasePage purchasePage = new PurchasePage(webDriver);
+        String filePath = "D:\\Testing projects\\SwagLabs\\src\\test\\resources\\ProfileData.xlsx";
+        String sheetName = "Sheet1";
+        ExcelReader reader = new ExcelReader(filePath, sheetName);
+        String firstName = reader.getCellData(1, 0);
+        String lastName = reader.getCellData(1, 1);
+        String postalCode = reader.getCellData(1, 2);
+        purchasePage.CheckOutForm(firstName, lastName, postalCode);
+    }
+    @Test (priority = 6)
+    public void FinishPurchase(){
+        PurchasePage purchasePage = new PurchasePage(webDriver);
+        purchasePage.FinishPurchase();
+    }
 }

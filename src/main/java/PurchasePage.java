@@ -1,3 +1,5 @@
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,9 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.asserts.SoftAssert;
-import java.time.Duration;
-import java.util.List;
 
+import java.io.InputStream;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 public class PurchasePage {
     private WebDriver webDriver;
     private static final Logger logger = LoggerFactory.getLogger(PurchasePage.class);
@@ -89,14 +93,33 @@ public class PurchasePage {
             logger.error("Error On Checkour {}",e);
         }
     }
-    public void CheckOutForm(){
+    public void CheckOutForm(String firstName,String lastName,String postalCode){
         try{
             WebElement firstNameField = webDriver.findElement(By.id("first-name"));
             WebElement lastNameField = webDriver.findElement(By.id("last-name"));
             WebElement postalCodeField = webDriver.findElement(By.id("postal-code"));
+            firstNameField.sendKeys(firstName);
+            lastNameField.sendKeys(lastName);
+            postalCodeField.sendKeys(postalCode);
+            logger.info("Check Out Form Filled Successfully");
+            WebElement continueButton = webDriver.findElement(By.className("cart_button"));
+            continueButton.click();
         }
         catch(Exception e){
-
+            logger.error("Error On Checkout {}",e.getMessage());
+        }
+        softAssert.assertAll();
+    }
+    public void FinishPurchase(){
+        WebElement finishButton = webDriver.findElement(By.className("cart_button"));
+        finishButton.click();
+        logger.info("Finish Button Clicked");
+        try{
+        WebElement checkOutCompleteContainer = webDriver.findElement(By.className("checkout_complete_container"));
+        logger.info("Purchase Success");
+        }catch(Exception e){
+        logger.error("Purchase Not Complete {}",e.getMessage());
         }
     }
+
 }

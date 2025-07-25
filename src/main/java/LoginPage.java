@@ -36,12 +36,10 @@ public class LoginPage {
             if (isAuthenticated) {
                 softAssert.fail("Login was expected to succeed, but failed: " + e.getMessage());
             } else {
-                // Expected failure, no assertion needed or just log info
                 logger.info("Login failed as expected.");
             }
         }
 
-        // Collect all assertion results
         softAssert.assertAll();
     }
 }
