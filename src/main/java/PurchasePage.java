@@ -111,7 +111,9 @@ public class PurchasePage {
         softAssert.assertAll();
     }
     public void FinishPurchase(){
-        WebElement finishButton = webDriver.findElement(By.className("cart_button"));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(20));
+
+        WebElement finishButton = wait.until(ExpectedConditions.elementToBeClickable(By.className("cart_button")));
         finishButton.click();
         logger.info("Finish Button Clicked");
         try{

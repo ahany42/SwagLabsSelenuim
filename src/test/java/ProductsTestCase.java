@@ -24,9 +24,9 @@ public class ProductsTestCase extends BaseTest {
         logger.info("Fetching products ");
         int expectedCount = purchasePage.productCounter;
         if (buttonCounter == expectedCount) {
-            logger.info("✅ Product count matches expected value.");
+            logger.info("Product count matches expected value.");
         } else {
-            logger.error("❌ Product count mismatch! Expected: {}, Actual: {}", expectedCount, buttonCounter);
+            logger.error("Product count mismatch! Expected: {}, Actual: {}", expectedCount, buttonCounter);
         }
         softAssert.assertEquals(buttonCounter, expectedCount, "Product count mismatch!");
         softAssert.assertAll();
@@ -39,9 +39,9 @@ public class ProductsTestCase extends BaseTest {
         PriceLabelCounter = priceLabels.size();
         int expectedCount = purchasePage.productCounter;
         if (PriceLabelCounter == expectedCount) {
-            logger.info("✅ Product count matches expected value.");
+            logger.info("Product count matches expected value.");
         } else {
-            logger.error("❌ Product count mismatch! Expected: {}, Actual: {}", expectedCount, PriceLabelCounter);
+            logger.error("Product count mismatch! Expected: {}, Actual: {}", expectedCount, PriceLabelCounter);
         }
         softAssert.assertEquals(PriceLabelCounter, expectedCount, "Product count mismatch!");
         softAssert.assertAll();
