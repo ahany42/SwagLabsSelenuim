@@ -30,7 +30,7 @@ public class PurchasePage {
     public void AddToCart() {
         logger.info("About to add item {} to cart", item_number_to_be_tested);
         try {
-            WebElement cartNumberLabel = webDriver.findElement(By.className("fa-layers-counter.shopping_cart_badge"));
+            WebElement cartNumberLabel = webDriver.findElement(By.className("shopping_cart_badge"));
             String cartText = cartNumberLabel.getText().trim();
             initialCartCount = Integer.parseInt(cartText);
         } catch (Exception e) {
@@ -44,10 +44,14 @@ public class PurchasePage {
             logger.error("Failed to click on item {}", item_number_to_be_tested, e);
             softAssert.fail("Exception while clicking add to cart button: " + e.getMessage());
         }
+        softAssert.assertAll();
+    }
+
+    public void NumberOfItemsInCart() {
         try {
             WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
             WebElement updatedCartLabel = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    By.className("fa-layers-counter.shopping_cart_badge")));
+                    By.className("shopping_cart_badge")));
 
             String updatedCartText = updatedCartLabel.getText().trim();
             cartCount = Integer.parseInt(updatedCartText);
@@ -55,16 +59,44 @@ public class PurchasePage {
             logger.warn("Could not locate updated cart number. Assuming cartCount = 0");
             cartCount = 0;
         }
-        softAssert.assertAll();
-    }
-
-    public void NumberOfItemsInCart() {
         logger.info("Initial cart count: {}", initialCartCount);
         logger.info("Cart count after adding: {}", cartCount);
         logger.info("Expected cart count: {}", initialCartCount + 1);
 
         softAssert.assertEquals(cartCount, initialCartCount + 1, "Cart count mismatch after adding item");
-        softAssert.assertAll(); // Final assertion check
+        softAssert.assertAll();
         logger.info("Cart count validation completed");
+    }
+    public void ClickOnCart(){
+     try{
+         WebElement cartIcon = webDriver.findElement(By.className("shopping_cart_link"));
+         cartIcon.click();
+         logger.info("Cart Clicked Successfully");
+     }catch(Exception e){
+         logger.error("Couldn't Continue to Purchase {}",e);
+         softAssert.fail("Failed to click on the cart icon: " + e.getMessage());
+     }
+        softAssert.assertAll();
+    }
+    public void CheckOut(){
+        WebElement checkOutButton;
+        try{
+            checkOutButton = webDriver.findElement(By.className("checkout_button"));
+            checkOutButton.click();
+            logger.info("Check Out Completed");
+        }
+        catch(Exception e){
+            logger.error("Error On Checkour {}",e);
+        }
+    }
+    public void CheckOutForm(){
+        try{
+            WebElement firstNameField = webDriver.findElement(By.id("first-name"));
+            WebElement lastNameField = webDriver.findElement(By.id("last-name"));
+            WebElement postalCodeField = webDriver.findElement(By.id("postal-code"));
+        }
+        catch(Exception e){
+
+        }
     }
 }

@@ -18,7 +18,7 @@ public class BaseTest {
             System.err.println("Could not clear log file: " + e.getMessage());
         }
     }
-    @BeforeClass
+    @BeforeSuite
     public void setup() {
         clearLogFile();
         logger.info("Setting up WebDriver and navigating to base URL...");
@@ -27,13 +27,8 @@ public class BaseTest {
         webDriver.get(baseUrl);
         webDriver.manage().window().maximize();
         logger.debug("Navigated to: {}", baseUrl);
-        if(!isLoggedIn){
-            logger.info("Login...");
-            LoginTestCase loginTestCase = new LoginTestCase();
-            loginTestCase.ValidLogin();
-        }
     }
-    @AfterClass
+    @AfterSuite
     public void tearDown() throws InterruptedException {
         logger.info("Tearing down WebDriver...");
         Thread.sleep(5000);

@@ -9,8 +9,7 @@ public class LoginTestCase extends BaseTest {
 
     @BeforeMethod
     public void navigateToLoginPage() {
-        // Navigate to login page before each test to reset state
-        webDriver.get(PropertiesUtil.get("base.url"));  // <-- Change to your login URL
+        webDriver.get(PropertiesUtil.get("base.url"));
         logger.info("Navigated to login page.");
     }
 
@@ -39,6 +38,15 @@ public class LoginTestCase extends BaseTest {
         loginPage.LoginToTheSystem(isAuthenticated);
 
         logger.info("Completed login test for user '{}'", username);
+    }
+    @Test(priority =2)
+    public void EmptyUserNameAndPassword(){
+        logger.debug("Starting invalid user name login test case...");
+        boolean isAuthenticated = false;
+        LoginPage loginPage = new LoginPage(webDriver, "", "");
+        loginPage.LoginToTheSystem(isAuthenticated);
+
+        logger.info("Completed login test with empty username and password");
     }
     @Test(priority = 3)
     public void InValidPasswordLogin(){

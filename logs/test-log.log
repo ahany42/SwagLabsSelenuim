@@ -1,10 +1,47 @@
-[2025-07-25 01:51:02] [INFO ] [LoginTestCase:24] - Setting up WebDriver and navigating to base URL...
-[2025-07-25 01:51:05] [DEBUG] [LoginTestCase:29] - Navigated to: https://www.saucedemo.com/v1/
-[2025-07-25 01:51:05] [INFO ] [LoginTestCase:31] - Login...
-[2025-07-25 01:51:05] [INFO ] [LoginTestCase:89] - Starting valid login test case...
-[2025-07-25 01:51:05] [DEBUG] [LoginTestCase:95] - Loaded credentials from properties: username='standard_user', expected='true'
-[2025-07-25 01:51:07] [INFO ] [LoginTestCase:100] - Completed login test for user 'standard_user'
-[2025-07-25 01:51:07] [INFO ] [LoginTestCase:6] - About to Add Item to Cart
-[2025-07-25 01:51:17] [INFO ] [LoginTestCase:12] - About to Test Number of Items in Cart
-[2025-07-25 01:51:17] [INFO ] [LoginTestCase:38] - Tearing down WebDriver...
-[2025-07-25 01:51:22] [DEBUG] [LoginTestCase:42] - WebDriver quit successfully.
+[2025-07-25 23:41:50] [INFO ] [LoginTestCase:24] - Setting up WebDriver and navigating to base URL...
+[2025-07-25 23:41:53] [DEBUG] [LoginTestCase:29] - Navigated to: https://www.saucedemo.com/v1/
+[2025-07-25 23:41:53] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-25 23:41:53] [DEBUG] [LoginTestCase:29] - Starting invalid user name login test case...
+[2025-07-25 23:41:53] [DEBUG] [LoginTestCase:35] - Loaded credentials from properties: username='WrongUserName', expected='false'
+[2025-07-25 23:41:53] [INFO ] [LoginTestCase:40] - Completed login test for user 'WrongUserName'
+[2025-07-25 23:41:54] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-25 23:41:54] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-25 23:41:54] [DEBUG] [LoginTestCase:44] - Starting invalid user name login test case...
+[2025-07-25 23:41:54] [INFO ] [LoginTestCase:49] - Completed login test with empty username and password
+[2025-07-25 23:41:54] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-25 23:41:54] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-25 23:41:54] [DEBUG] [LoginTestCase:53] - Starting invalid password login test case...
+[2025-07-25 23:41:54] [DEBUG] [LoginTestCase:59] - Loaded credentials from properties: username='standard_user', expected='false'
+[2025-07-25 23:41:54] [INFO ] [LoginTestCase:64] - Completed login test for user 'standard_user'
+[2025-07-25 23:41:54] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-25 23:41:54] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-25 23:41:54] [DEBUG] [LoginTestCase:68] - Starting invalid password and User Name login test case...
+[2025-07-25 23:41:54] [DEBUG] [LoginTestCase:74] - Loaded credentials from properties: username='WrongUserName', expected='false'
+[2025-07-25 23:41:55] [INFO ] [LoginTestCase:79] - Completed login test for user 'WrongUserName'
+[2025-07-25 23:41:55] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-25 23:41:55] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-25 23:41:55] [DEBUG] [LoginTestCase:82] - Starting invalid password and User Name login test case...
+[2025-07-25 23:41:55] [DEBUG] [LoginTestCase:88] - Loaded credentials from properties: username='locked_out_user', expected='false'
+[2025-07-25 23:41:55] [INFO ] [LoginTestCase:93] - Completed login test for user 'locked_out_user'
+[2025-07-25 23:41:55] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-25 23:41:55] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-25 23:41:55] [INFO ] [LoginTestCase:97] - Starting valid login test case...
+[2025-07-25 23:41:55] [DEBUG] [LoginTestCase:103] - Loaded credentials from properties: username='standard_user', expected='true'
+[2025-07-25 23:42:11] [INFO ] [LoginTestCase:108] - Completed login test for user 'standard_user'
+[2025-07-25 23:42:11] [WARN ] [LoginTestCase:23] - Could not clear login fields (maybe not on login page): no such element: Unable to locate element: {"method":"css selector","selector":"#user\-name"}
+  (Session info: chrome=138.0.7204.168)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ae5069cc6aa4a46ab7bab783043f6138, findElement {using=id, value=user-name}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.168, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52429}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52429/devtoo..., se:cdpVersion: 138.0.7204.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ae5069cc6aa4a46ab7bab783043f6138
+[2025-07-25 23:42:11] [INFO ] [LoginTestCase:37] - Fetching products 
+[2025-07-25 23:42:11] [INFO ] [LoginTestCase:42] - ✅ Product count matches expected value.
+[2025-07-25 23:42:11] [INFO ] [LoginTestCase:24] - Fetching products 
+[2025-07-25 23:42:11] [INFO ] [LoginTestCase:27] - ✅ Product count matches expected value.
+[2025-07-25 23:42:11] [INFO ] [LoginTestCase:6] - About to Add Item to Cart
+[2025-07-25 23:42:11] [INFO ] [LoginTestCase:12] - About to Test Number of Items in Cart
+[2025-07-25 23:42:12] [INFO ] [LoginTestCase:33] - Tearing down WebDriver...
+[2025-07-25 23:42:18] [DEBUG] [LoginTestCase:37] - WebDriver quit successfully.
