@@ -106,6 +106,5 @@ public class LoginTestCase extends BaseTest {
         loginPage.LoginToTheSystem(isAuthenticated);
 
         logger.info("Completed login test for user '{}'", username);
-        isLoggedIn = true;
     }
 }

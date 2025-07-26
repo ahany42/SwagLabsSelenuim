@@ -8,10 +8,10 @@ import org.apache.logging.log4j.Logger;
 import java.io.FileWriter;
 import org.testng.TestNG;
 import java.io.IOException;
+import org.openqa.selenium.chrome.ChromeOptions;
 public class BaseTest {
     public static final Logger logger = LogManager.getLogger(LoginTestCase.class);
     public static WebDriver webDriver;
-    public static boolean isLoggedIn = false;
     private void clearLogFile() {
         try (FileWriter fw = new FileWriter("logs/test-log.log", false)) {
         } catch (IOException e) {
@@ -21,7 +21,8 @@ public class BaseTest {
     @BeforeSuite
     public void setup() {
         clearLogFile();
-        logger.info("Setting up WebDriver and navigating to base URL...");
+        logger.info("Setting up WebDriver and navigating to base URL...");ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
         webDriver = new ChromeDriver();
         String baseUrl = PropertiesUtil.get("base.url");
         webDriver.get(baseUrl);
