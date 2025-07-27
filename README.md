@@ -1,6 +1,6 @@
 # SwagLabs Selenium Test
 
-This project is a structured Selenium automation framework using Java, TestNG, Maven, and Cucumber for BDD. It integrates Excel data handling, Log4j2 for logging, and Allure for detailed test reporting.
+This project is a structured Selenium automation framework using Java, TestNG, and Maven. It integrates Excel data handling, Log4j2 for logging, and Allure for detailed test reporting.
 
 ##  Project Structure
 
@@ -37,7 +37,6 @@ Java 24
 Selenium WebDriver 4.34.0
 TestNG 7.11.0
 Apache POI (poi-ooxml) 5.2.3
-Cucumber Java 7.16.1
 Log4j2 (log4j-core) 2.20.0
 Allure TestNG 2.24.0
 Maven Compiler Plugin 3.11.0
