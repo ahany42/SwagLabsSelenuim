@@ -16,7 +16,7 @@ This project is a structured Selenium automation framework using Java, TestNG, M
 │   │   │       └── example/
 │   │   │           ├── LoginPage.java       # Page Object for Login
 │   │   │           └── PurchasePage.java    # Page Object for Purchase
-│   │   └── resources/
+│   │   
 │
 │   └── test/
 │       ├── java/
