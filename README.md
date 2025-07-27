@@ -27,12 +27,6 @@ This project is a structured Selenium automation framework using Java, TestNG, M
 │       │   ├── PropertiesUtil.java          # Config/property utility
 │       │   └── PurchaseTestCase.java        # Purchase flow test cases
 │       └── resources/
-│           ├── features/
-│           │   ├── login.feature            # BDD feature for login
-│           │   ├── LoginSteps.java          # Step definitions for login
-│           │   ├── purchase.feature         # BDD feature for purchase
-│           │   └── PurchaseSteps.java       # Step definitions for purchase
-│           │   └── RunCucmber.java          # Cucmber Runner
 │           ├── log4j2.xml                   # Logging configuration
 │           ├── ProfileData.xlsx             # Profile Data To Fill Purchase Form
 │           ├── ProductData.xlsx             # Product To Purchase
