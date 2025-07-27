@@ -1,49 +1,55 @@
-[2025-07-26 19:14:41] [INFO ] [LoginTestCase:24] - Setting up WebDriver and navigating to base URL...
-[2025-07-26 19:14:44] [DEBUG] [LoginTestCase:30] - Navigated to: https://www.saucedemo.com/v1/
-[2025-07-26 19:14:44] [INFO ] [LoginTestCase:13] - Navigated to login page.
-[2025-07-26 19:14:44] [DEBUG] [LoginTestCase:29] - Starting invalid user name login test case...
-[2025-07-26 19:14:44] [DEBUG] [LoginTestCase:35] - Loaded credentials from properties: username='WrongUserName', expected='false'
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:40] - Completed login test for user 'WrongUserName'
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:13] - Navigated to login page.
-[2025-07-26 19:14:45] [DEBUG] [LoginTestCase:44] - Starting invalid user name login test case...
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:49] - Completed login test with empty username and password
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:13] - Navigated to login page.
-[2025-07-26 19:14:45] [DEBUG] [LoginTestCase:53] - Starting invalid password login test case...
-[2025-07-26 19:14:45] [DEBUG] [LoginTestCase:59] - Loaded credentials from properties: username='standard_user', expected='false'
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:64] - Completed login test for user 'standard_user'
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
-[2025-07-26 19:14:45] [INFO ] [LoginTestCase:13] - Navigated to login page.
-[2025-07-26 19:14:45] [DEBUG] [LoginTestCase:68] - Starting invalid password and User Name login test case...
-[2025-07-26 19:14:45] [DEBUG] [LoginTestCase:74] - Loaded credentials from properties: username='WrongUserName', expected='false'
-[2025-07-26 19:14:46] [INFO ] [LoginTestCase:79] - Completed login test for user 'WrongUserName'
-[2025-07-26 19:14:46] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
-[2025-07-26 19:14:46] [INFO ] [LoginTestCase:13] - Navigated to login page.
-[2025-07-26 19:14:46] [DEBUG] [LoginTestCase:82] - Starting invalid password and User Name login test case...
-[2025-07-26 19:14:46] [DEBUG] [LoginTestCase:88] - Loaded credentials from properties: username='locked_out_user', expected='false'
-[2025-07-26 19:14:46] [INFO ] [LoginTestCase:93] - Completed login test for user 'locked_out_user'
-[2025-07-26 19:14:46] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
-[2025-07-26 19:14:46] [INFO ] [LoginTestCase:13] - Navigated to login page.
-[2025-07-26 19:14:46] [INFO ] [LoginTestCase:97] - Starting valid login test case...
-[2025-07-26 19:14:46] [DEBUG] [LoginTestCase:103] - Loaded credentials from properties: username='standard_user', expected='true'
-[2025-07-26 19:14:52] [INFO ] [LoginTestCase:108] - Completed login test for user 'standard_user'
-[2025-07-26 19:14:52] [WARN ] [LoginTestCase:23] - Could not clear login fields (maybe not on login page): no such element: Unable to locate element: {"method":"css selector","selector":"#user\-name"}
+[2025-07-27 21:18:29] [INFO ] [LoginTestCase:27] - Setting up WebDriver and navigating to base URL...
+[2025-07-27 21:18:33] [DEBUG] [LoginTestCase:33] - Navigated to: https://www.saucedemo.com/v1/
+[2025-07-27 21:18:33] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-27 21:18:33] [DEBUG] [LoginTestCase:29] - Starting invalid user name login test case...
+[2025-07-27 21:18:33] [DEBUG] [LoginTestCase:35] - Loaded credentials from properties: username='WrongUserName', expected='false'
+[2025-07-27 21:18:33] [INFO ] [LoginTestCase:40] - Completed login test for user 'WrongUserName'
+[2025-07-27 21:18:33] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-27 21:18:33] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-27 21:18:33] [DEBUG] [LoginTestCase:44] - Starting invalid user name login test case...
+[2025-07-27 21:18:34] [INFO ] [LoginTestCase:49] - Completed login test with empty username and password
+[2025-07-27 21:18:34] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-27 21:18:34] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-27 21:18:34] [DEBUG] [LoginTestCase:53] - Starting invalid password login test case...
+[2025-07-27 21:18:34] [DEBUG] [LoginTestCase:59] - Loaded credentials from properties: username='standard_user', expected='false'
+[2025-07-27 21:18:34] [INFO ] [LoginTestCase:64] - Completed login test for user 'standard_user'
+[2025-07-27 21:18:34] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-27 21:18:34] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-27 21:18:34] [DEBUG] [LoginTestCase:68] - Starting invalid password and User Name login test case...
+[2025-07-27 21:18:34] [DEBUG] [LoginTestCase:74] - Loaded credentials from properties: username='WrongUserName', expected='false'
+[2025-07-27 21:18:35] [INFO ] [LoginTestCase:79] - Completed login test for user 'WrongUserName'
+[2025-07-27 21:18:35] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-27 21:18:35] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-27 21:18:35] [DEBUG] [LoginTestCase:82] - Starting invalid password and User Name login test case...
+[2025-07-27 21:18:35] [DEBUG] [LoginTestCase:88] - Loaded credentials from properties: username='locked_out_user', expected='false'
+[2025-07-27 21:18:35] [INFO ] [LoginTestCase:93] - Completed login test for user 'locked_out_user'
+[2025-07-27 21:18:35] [INFO ] [LoginTestCase:21] - Cleared login input fields after test method.
+[2025-07-27 21:18:35] [INFO ] [LoginTestCase:13] - Navigated to login page.
+[2025-07-27 21:18:35] [INFO ] [LoginTestCase:97] - Starting valid login test case...
+[2025-07-27 21:18:35] [DEBUG] [LoginTestCase:103] - Loaded credentials from properties: username='standard_user', expected='true'
+[2025-07-27 21:18:47] [INFO ] [LoginTestCase:108] - Completed login test for user 'standard_user'
+[2025-07-27 21:18:47] [WARN ] [LoginTestCase:23] - Could not clear login fields (maybe not on login page): no such element: Unable to locate element: {"method":"css selector","selector":"#user\-name"}
   (Session info: chrome=138.0.7204.169)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.34.0', revision: '707dcb4246*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '24.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9ff3600475b23fb3c56c8114a5d92e2d, findElement {using=id, value=user-name}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58349}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58349/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9ff3600475b23fb3c56c8114a5d92e2d
-[2025-07-26 19:14:52] [INFO ] [LoginTestCase:37] - Fetching products 
-[2025-07-26 19:14:52] [INFO ] [LoginTestCase:42] - Product count matches expected value.
-[2025-07-26 19:14:52] [INFO ] [LoginTestCase:24] - Fetching products 
-[2025-07-26 19:14:52] [INFO ] [LoginTestCase:27] - Product count matches expected value.
-[2025-07-26 19:14:52] [INFO ] [LoginTestCase:6] - About to Add Item to Cart
-[2025-07-26 19:14:53] [INFO ] [LoginTestCase:12] - About to Test Number of Items in Cart
-[2025-07-26 19:14:53] [DEBUG] [PackageRelationshipCollection:309] - Parsing relationship: /xl/_rels/workbook.xml.rels
-[2025-07-26 19:14:54] [DEBUG] [PackageRelationshipCollection:309] - Parsing relationship: /_rels/.rels
-[2025-07-26 19:14:56] [INFO ] [LoginTestCase:34] - Tearing down WebDriver...
-[2025-07-26 19:15:01] [DEBUG] [LoginTestCase:38] - WebDriver quit successfully.
+Command: [0eb6c28d545fd3455a335725845586cc, findElement {value=user-name, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.169, chrome: {chromedriverVersion: 138.0.7204.168 (3e8d82e86e9..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53068}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53068/devtoo..., se:cdpVersion: 138.0.7204.169, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0eb6c28d545fd3455a335725845586cc
+[2025-07-27 21:18:47] [INFO ] [LoginTestCase:37] - Fetching products 
+[2025-07-27 21:18:47] [INFO ] [LoginTestCase:42] - Product count matches expected value.
+[2025-07-27 21:18:47] [INFO ] [LoginTestCase:24] - Fetching products 
+[2025-07-27 21:18:47] [INFO ] [LoginTestCase:27] - Product count matches expected value.
+[2025-07-27 21:18:47] [INFO ] [LoginTestCase:6] - About to Add Item to Cart
+[2025-07-27 21:18:48] [DEBUG] [PackageRelationshipCollection:309] - Parsing relationship: /xl/_rels/workbook.xml.rels
+[2025-07-27 21:18:48] [DEBUG] [PackageRelationshipCollection:309] - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+[2025-07-27 21:18:48] [DEBUG] [PackageRelationshipCollection:309] - Parsing relationship: /_rels/.rels
+[2025-07-27 21:18:48] [DEBUG] [POIXMLFactory:65] - using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings
+[2025-07-27 21:18:49] [INFO ] [LoginTestCase:21] - About to Test Number of Items in Cart
+[2025-07-27 21:18:50] [DEBUG] [PackageRelationshipCollection:309] - Parsing relationship: /xl/_rels/workbook.xml.rels
+[2025-07-27 21:18:50] [DEBUG] [PackageRelationshipCollection:309] - Parsing relationship: /_rels/.rels
+[2025-07-27 21:18:52] [INFO ] [LoginTestCase:39] - Tearing down WebDriver...
+[2025-07-27 21:18:57] [DEBUG] [LoginTestCase:43] - WebDriver quit successfully.
+[2025-07-27 21:18:57] [INFO ] [LoginTestCase:39] - Tearing down WebDriver...
+[2025-07-27 21:19:02] [DEBUG] [LoginTestCase:43] - WebDriver quit successfully.

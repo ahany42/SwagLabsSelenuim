@@ -1,5 +1,22 @@
+# Ignore all allure-results and allure-report folders everywhere
+**/allure-results/
+**/allure-report/
+
+# Also ignore files inside those folders
+**/allure-results/**
+**/allure-report/**
+
+# Ignore all target folders
 target/
+
+# Allow Maven wrapper JAR only
 !.mvn/wrapper/maven-wrapper.jar
+
+
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# Allow specific target folders in source trees
 !**/src/main/**/target/
 !**/src/test/**/target/
 

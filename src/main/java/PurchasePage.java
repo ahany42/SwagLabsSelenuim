@@ -31,8 +31,40 @@ public class PurchasePage {
         this.productCounter = buttons.size();
     }
 
-    public void AddToCart() {
+    public void AddToCart(String productToPurchase) {
         logger.info("About to add item {} to cart", item_number_to_be_tested);
+        try {
+            WebElement productTitle = webDriver.findElement(
+                    By.xpath("//div[@class='inventory_item_name' and contains(text(), '" + productToPurchase + "')]")
+            );
+            productTitle.click();
+
+            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+
+// Wait until product name is visible and has non-empty text
+            WebElement productName = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.className("inventory_details_name")
+            ));
+            wait.until(driver -> !productName.getText().trim().isEmpty());
+
+// Wait until product price is visible and has non-empty text
+            WebElement productPrice = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.className("inventory_details_price")
+            ));
+            wait.until(driver -> !productPrice.getText().trim().isEmpty());
+
+// Now it's safe to click the button
+            WebElement addToCartButton = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.className("btn_inventory")
+            ));
+            addToCartButton.click();
+            logger.info("Item added to cart successfully");
+
+        } catch (Exception e) {
+            logger.error("Failed to click on item {}", productToPurchase, e);
+            softAssert.fail("Exception while clicking add to cart button: " + e.getMessage());
+        }
+
         try {
             WebElement cartNumberLabel = webDriver.findElement(By.className("shopping_cart_badge"));
             String cartText = cartNumberLabel.getText().trim();
@@ -41,13 +73,7 @@ public class PurchasePage {
             logger.info("No items in cart initially. Assuming initialCartCount = 0");
             initialCartCount = 0;
         }
-        try {
-            buttons.get(item_number_to_be_tested).click();
-            logger.info("Item added to cart successfully");
-        } catch (Exception e) {
-            logger.error("Failed to click on item {}", item_number_to_be_tested, e);
-            softAssert.fail("Exception while clicking add to cart button: " + e.getMessage());
-        }
+
         softAssert.assertAll();
     }
 

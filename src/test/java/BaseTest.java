@@ -18,6 +18,9 @@ public class BaseTest {
             System.err.println("Could not clear log file: " + e.getMessage());
         }
     }
+    public WebDriver getDriver() {
+        return webDriver;
+    }
     @BeforeSuite
     public void setup() {
         clearLogFile();
@@ -29,6 +32,8 @@ public class BaseTest {
         webDriver.manage().window().maximize();
         logger.debug("Navigated to: {}", baseUrl);
     }
+    @AfterTest
+
     @AfterSuite
     public void tearDown() throws InterruptedException {
         logger.info("Tearing down WebDriver...");
