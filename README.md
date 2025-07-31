@@ -1,6 +1,6 @@
 # SwagLabs Selenium Test
 
-This project is a structured Selenium automation framework using Java, TestNG, Maven, and Cucumber for BDD. It integrates Excel data handling, Log4j2 for logging, and Allure for detailed test reporting.
+This project is a structured Selenium automation framework using Java, TestNG, and Maven. It integrates Excel data handling, Log4j2 for logging, and Allure for detailed test reporting.
 
 ##  Project Structure
 
@@ -11,12 +11,9 @@ This project is a structured Selenium automation framework using Java, TestNG, M
 │   └── test-log.log                         # Log output from test runs
 ├── src/
 │   ├── main/
-│   │   ├── java/
-│   │   │   └── org/
-│   │   │       └── example/
-│   │   │           ├── LoginPage.java       # Page Object for Login
-│   │   │           └── PurchasePage.java    # Page Object for Purchase
-│   │   └── resources/
+│   │   ├── LoginPage.java       # Page Object for Login
+│   │   └── PurchasePage.java    # Page Object for Purchase
+│   │   
 │
 │   └── test/
 │       ├── java/
@@ -27,12 +24,6 @@ This project is a structured Selenium automation framework using Java, TestNG, M
 │       │   ├── PropertiesUtil.java          # Config/property utility
 │       │   └── PurchaseTestCase.java        # Purchase flow test cases
 │       └── resources/
-│           ├── features/
-│           │   ├── login.feature            # BDD feature for login
-│           │   ├── LoginSteps.java          # Step definitions for login
-│           │   ├── purchase.feature         # BDD feature for purchase
-│           │   └── PurchaseSteps.java       # Step definitions for purchase
-│           │   └── RunCucmber.java          # Cucmber Runner
 │           ├── log4j2.xml                   # Logging configuration
 │           ├── ProfileData.xlsx             # Profile Data To Fill Purchase Form
 │           ├── ProductData.xlsx             # Product To Purchase
@@ -46,7 +37,6 @@ Java 24
 Selenium WebDriver 4.34.0
 TestNG 7.11.0
 Apache POI (poi-ooxml) 5.2.3
-Cucumber Java 7.16.1
 Log4j2 (log4j-core) 2.20.0
 Allure TestNG 2.24.0
 Maven Compiler Plugin 3.11.0
